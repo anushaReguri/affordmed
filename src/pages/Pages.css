@@ -1,0 +1,28 @@
+.p-10 {
+    padding: 10px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.sign-up {
+    border: 1px solid black;
+    width: 40%;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.sign-up-button {
+    margin: auto;
+    margin-top: 10px;
+}
+
+.float-right {
+    float: right;
+    font-size: 14px;
+}
