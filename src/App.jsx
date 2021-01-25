@@ -6,14 +6,14 @@ import Login from './pages/login/Login';
 function App() {
     return ( <
         div className = "App" >
-<SIgnUp/>
  <BrowserRouter>
- <Switch>
- <Route path='signup' component={SIgnUp}></Route>
- </Switch>
+ <div>
+ <Route exact path='/signup' component={SIgnUp}></Route>
+ <Route exact path='/' component={Login}></Route>
+ </div>
  </BrowserRouter>
         < / div >
     );
 }
 
-export default App;
+export default App

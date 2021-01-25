@@ -2,12 +2,15 @@ import React,{useState} from 'react'
 import { InputText } from 'primereact/inputtext';
 import '../../pages/Pages.css'; 
 import { Button } from 'primereact/button';
+import { Toast } from 'primereact/toast';
 
 function SIgnUp() {
     const [state, setstate] = useState({firstName:'',
     lastName:'',
 email:'',
 password:''});
+const [growl, setGrowl] = useState();
+
 
 const signUP=()=>{
     const requestOptions = {
@@ -20,9 +23,12 @@ const signUP=()=>{
     };
     fetch('http://localhost:3030/signup', requestOptions)
         .then(response => response.json())
+        .then((data)=>growl.show({life:'6000',severity:'success',summary:'Signed up successfully'}))
 }
 
   return (
+    <div>
+            <Toast ref={(el) => setGrowl(el)} />
     <div className='p-20 sign-up'>
       <div className='row'>
         <b className='col-md-6'> First Name:</b>
@@ -44,6 +50,7 @@ const signUP=()=>{
       <div className='row m-t-10'>
 <Button className='sign-up-button' onClick={signUP}>Sign Up</Button>
       </div>
+    </div>
     </div>
   )
 }
